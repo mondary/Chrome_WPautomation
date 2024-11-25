@@ -8,8 +8,7 @@
 
     // Construire le contenu à envoyer, incluant le séparateur et le texte générique
     const separator = "\n---\n"; // Séparateur
-    const genericText = "Ceci est un texte générique ajouté au résumé."; // Texte générique
-    const content = `Source: ${url}\n\n📌 Description: ${summary.content}${separator}${genericText}`;
+    const content = `Source: ${url}\n\n📌 Description: ${summary.content}${separator}`; // Utiliser uniquement la description
 
     // Construire l'URL pour le nouvel onglet avec les paramètres
     const newPostUrl = `new_post.html?post_title=${encodeURIComponent(summary.title)}&content=${encodeURIComponent(content)}`;
@@ -34,10 +33,7 @@ async function fetchSummary(url) {
         // Récupérer la description
         const description = doc.querySelector('meta[name="description"]')?.content || "Résumé non disponible";
 
-        // Construire le contenu à envoyer
-        const content = `Source: ${url}\n\n📌 Description: ${description}`;
-
-        return { title, content };
+        return { title, content: description }; // Retourner uniquement la description
     } catch (error) {
         console.error(error);
         return { title: "Erreur", content: "Impossible d'obtenir le résumé." };
