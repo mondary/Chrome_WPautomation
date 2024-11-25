@@ -1,15 +1,16 @@
 (async () => {
+    // Afficher le loader
     const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
     const url = tab.url;
 
     // Obtenir le résumé du site
     const summary = await fetchSummary(url);
 
-    // Construire l'URL avec les paramètres pour le nouveau post
-    const postUrl = `https://mondary.design/wp-admin/post-new.php?post_title=${encodeURIComponent(summary.title)}&content=${encodeURIComponent(summary.content)}`;
+    // Construire l'URL pour le nouvel onglet avec les paramètres
+    const newPostUrl = `new_post.html?post_title=${encodeURIComponent(summary.title)}&content=${encodeURIComponent(summary.content)}`;
 
-    // Ouvrir l'URL dans un nouvel onglet
-    chrome.tabs.create({ url: postUrl });
+    // Ouvrir le nouvel onglet avec le loader
+    chrome.tabs.create({ url: newPostUrl });
 })();
 
 // Fonction pour obtenir le résumé du site

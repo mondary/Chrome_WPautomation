@@ -20,3 +20,33 @@ button {
 button:hover {
     background-color: #45a049;
 }
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.loader-fullscreen {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.loader-fullscreen-label {
+    position: relative;
+    text-transform: uppercase;
+    color: black;
+}
+
+.loader-fullscreen-fill {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    background-color: #007BFF;
+    transition: height 1s ease-in-out;
+}
