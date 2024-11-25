@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texte Extrait</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f4;
+            width: 400px; /* Largeur de la popup */
+        }
+        pre {
+            background-color: #fff;
+            padding: 10px;
+            border: 1px solid #ccc;
+            overflow: auto;
+            white-space: pre-wrap; /* Pour gérer les longs textes */
+        }
+    </style>
+</head>
+<body>
+    <h1>Texte extrait de la page :</h1>
+    <pre id="logContent"></pre>
+    <script>
+        // Récupérer le texte extrait depuis le stockage local
+        chrome.storage.local.get(['extractedText'], function(result) {
+            document.getElementById('logContent').textContent = result.extractedText || 'Aucun texte extrait disponible.';
+        });
+    </script>
+</body>
+</html>
