@@ -8,7 +8,7 @@
 
     // Construire le contenu à envoyer, incluant le séparateur et le texte générique
     const separator = "\n---\n"; // Séparateur
-    const content = `Source: ${url}\n\n📌 Description: ${summary.content}${separator}`; // Utiliser uniquement la description
+    const content = `${url}\n\n📌 ${summary.content}${separator}`; // Utiliser uniquement la description
 
     // Construire l'URL pour le nouvel onglet avec les paramètres
     const newPostUrl = `new_post.html?post_title=${encodeURIComponent(summary.title)}&content=${encodeURIComponent(content)}`;
