@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Résumé de Page Web",
-    "version": "1.0",
+    "version": "1.3",
     "description": "Obtenez un résumé de la page web actuelle et créez un nouveau post sur WordPress.",
     "permissions": [
         "activeTab",
