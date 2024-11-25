@@ -1,4 +1,4 @@
-document.getElementById('getSummary').addEventListener('click', async () => {
+(async () => {
     const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
     const url = tab.url;
 
@@ -10,7 +10,7 @@ document.getElementById('getSummary').addEventListener('click', async () => {
 
     // Ouvrir l'URL dans un nouvel onglet
     chrome.tabs.create({ url: postUrl });
-});
+})();
 
 // Fonction pour obtenir le résumé du site
 async function fetchSummary(url) {
