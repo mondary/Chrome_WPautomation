@@ -6,8 +6,13 @@
     // Obtenir le résumé du site
     const summary = await fetchSummary(url);
 
+    // Construire le contenu à envoyer, incluant le séparateur et le texte générique
+    const separator = "\n---\n"; // Séparateur
+    const genericText = "Ceci est un texte générique ajouté au résumé."; // Texte générique
+    const content = `Source: ${url}\n\n📌 Description: ${summary.content}${separator}${genericText}`;
+
     // Construire l'URL pour le nouvel onglet avec les paramètres
-    const newPostUrl = `new_post.html?post_title=${encodeURIComponent(summary.title)}&content=${encodeURIComponent(summary.content)}`;
+    const newPostUrl = `new_post.html?post_title=${encodeURIComponent(summary.title)}&content=${encodeURIComponent(content)}`;
 
     // Ouvrir le nouvel onglet avec le loader
     chrome.tabs.create({ url: newPostUrl });
