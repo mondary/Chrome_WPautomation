@@ -35,12 +35,19 @@ html, body {
     align-items: center;
     justify-content: center;
     position: relative;
+    flex-direction: column;
 }
 
 .loader-fullscreen-label {
     position: relative;
     text-transform: uppercase;
     color: black;
+    font-size: 6em;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    width: 90%;
+    line-height: 1.2;
 }
 
 .loader-fullscreen-fill {
