@@ -19,4 +19,4 @@ const loaderInterval = setInterval(() => {
 
     // Mettre à jour la hauteur du loader
     loaderFill.style.height = h + '%'; // Mettre à jour la hauteur du loader
-}, 100); // Intervalle de 100 ms pour une animation fluide
+}, 150); // Augmentez l'intervalle à 150 ms pour ralentir l'animation

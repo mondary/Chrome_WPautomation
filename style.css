@@ -61,3 +61,12 @@ html, body {
     transition: height 1s ease-in-out;
     z-index: 0;
 }
+
+.footer-message {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: white;
+    font-size: 1em;
+    z-index: 1;
+}
