@@ -42,7 +42,7 @@ html, body {
 .loader-fullscreen-label {
     position: absolute;
     text-transform: uppercase;
-    color: black;
+    color: white;
     font-size: 6em;
     font-weight: bold;
     font-family: 'Bungee', sans-serif;

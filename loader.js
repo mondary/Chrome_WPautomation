@@ -1,5 +1,6 @@
 let h = 0;
 const loaderFill = document.querySelector('.loader-fullscreen-fill');
+const loaderLabel = document.querySelector('.loader-fullscreen-label');
 
 // Démarrer l'animation de chargement
 const loaderInterval = setInterval(() => {
@@ -15,5 +16,7 @@ const loaderInterval = setInterval(() => {
             window.location.href = postUrl;
         }, 500); // Délai de 0,5 seconde avant la redirection
     }
+
+    // Mettre à jour la hauteur du loader
     loaderFill.style.height = h + '%'; // Mettre à jour la hauteur du loader
 }, 100); // Intervalle de 100 ms pour une animation fluide
