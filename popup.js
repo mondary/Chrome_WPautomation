@@ -13,8 +13,19 @@
     // Construire l'URL pour le nouvel onglet avec les paramètres
     const newPostUrl = `new_post.html?post_title=${encodeURIComponent(summary.title)}&content=${encodeURIComponent(content)}`;
 
-    // Ouvrir le nouvel onglet avec le loader
-    chrome.tabs.create({ url: newPostUrl });
+    // Obtenir l'ID de la fenêtre actuelle
+    const windowId = await chrome.windows.getCurrent();
+
+    // Obtenir l'ID de l'onglet actif
+    const [activeTab] = await chrome.tabs.query({ active: true, currentWindow: true });
+
+    // Ouvrir le nouvel onglet à droite de l'onglet actif
+    chrome.tabs.create({ 
+        url: newPostUrl, 
+        windowId: windowId.id, 
+        index: activeTab.index + 1 // Utilisez l'index de l'onglet actif + 1
+    });
+
 })();
 
 // Fonction pour obtenir le résumé du site
